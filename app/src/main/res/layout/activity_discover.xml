@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradienttrain"
+    android:orientation="vertical"
+    tools:context=".Discover">
+
+    <!-- First Row -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- First ImageView and TextView -->
+        <ImageView
+            android:id="@+id/muscle"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="140dp"
+            android:src="@drawable/muscle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MUSCLES"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_below="@+id/muscle"
+            android:layout_marginStart="80dp"
+            android:textSize="15sp"/>
+
+        <!-- Second ImageView and TextView -->
+        <ImageView
+            android:id="@+id/fullbody"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="200dp"
+            android:src="@drawable/fullbody"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FULLBODY"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_below="@+id/fullbody"
+            android:layout_marginStart="270dp"
+            android:textSize="15sp"
+            android:layout_gravity="center"/>
+    </RelativeLayout>
+
+    <!-- Second Row -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- First ImageView and TextView in the second row -->
+        <ImageView
+            android:id="@+id/Legs"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="140dp"
+            android:src="@drawable/legs"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LEGS"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_below="@+id/Legs"
+            android:layout_marginStart="80dp"
+            android:textSize="15sp" />
+
+        <!-- Second ImageView and TextView in the second row -->
+        <ImageView
+            android:id="@+id/belly"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="200dp"
+            android:src="@drawable/belly" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BELLY"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_below="@+id/belly"
+            android:layout_marginStart="270dp"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+    <!-- Third Row -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <!-- Centered ImageView and TextView in the third row -->
+        <ImageView
+            android:id="@+id/chest"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/chest"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHEST"
+            android:textColor="@color/black"
+            android:layout_below="@+id/chest"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginStart="90dp"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
