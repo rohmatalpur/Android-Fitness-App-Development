@@ -8,21 +8,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.card.MaterialCardView;
+
 public class Discoveryoutubers extends AppCompatActivity {
 
-    CardView muktigautam,mindwithmuscle,madfit,cultfit,healthifyme,thebodyproject;
+    MaterialCardView muktigautam, mindwithmuscle, madfit, cultfit, healthifyme, thebodyproject;
+    ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discoveryoutubers);
 
-        muktigautam=findViewById(R.id.muktigautum);
-        mindwithmuscle=findViewById(R.id.mindwithmuscle);
-        madfit=findViewById(R.id.madfit);
-        cultfit=findViewById(R.id.cultfit);
-        healthifyme=findViewById(R.id.healthifyme);
-        thebodyproject=findViewById(R.id.thebodyproject);
+        backButton = findViewById(R.id.backButton);
+        muktigautam = findViewById(R.id.muktigautum);
+        mindwithmuscle = findViewById(R.id.mindwithmuscle);
+        madfit = findViewById(R.id.madfit);
+        cultfit = findViewById(R.id.cultfit);
+        healthifyme = findViewById(R.id.healthifyme);
+        thebodyproject = findViewById(R.id.thebodyproject);
+
+        // Setup back button
+        backButton.setOnClickListener(v -> finish());
 
 
         muktigautam.setOnClickListener(new View.OnClickListener() {

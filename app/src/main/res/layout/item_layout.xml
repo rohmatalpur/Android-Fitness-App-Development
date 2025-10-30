@@ -1,49 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/gradienttrain"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    android:clickable="true"
+    android:focusable="true"
+    style="@style/Widget.Material3.CardView.Elevated">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:backgroundTint="@color/black">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/image"
-                android:background="@drawable/picture"
-                android:scaleType="centerCrop">
-            </ImageView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="4 Min Booty Lift"
-                android:id="@+id/t1"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:layout_marginTop="200dp"
-                android:layout_below="@+id/image"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="hbhbhb"
-                android:textColor="#E43434"
-                android:textSize="30sp"
-                android:id="@+id/t2"
-                android:layout_marginTop="230dp"
-                android:layout_below="@+id/t1">
-            </TextView>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+            android:orientation="vertical">
 
-</RelativeLayout>
+            <!-- Workout Thumbnail -->
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:transitionName="workout_thumbnail"
+                android:contentDescription="Workout thumbnail"/>
+
+            <!-- Workout Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/t1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Workout Title"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+
+                <!-- Trainer -->
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👤 Trainer Name"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorPrimary"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Favorite Button -->
+        <ImageButton
+            android:id="@+id/favoriteButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:src="@android:drawable/btn_star_big_off"
+            android:background="#80000000"
+            android:contentDescription="Favorite"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:elevation="4dp"/>
+
+    </FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>

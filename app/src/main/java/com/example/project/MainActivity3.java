@@ -49,6 +49,14 @@ public class MainActivity3 extends AppCompatActivity {
 
         intent=getIntent();
         String condition=intent.getStringExtra("button");
+
+        // Handle null condition
+        if(condition == null || condition.isEmpty()) {
+            android.widget.Toast.makeText(this, "Error: No category specified", android.widget.Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
         if(condition.equalsIgnoreCase("belly")){
             textView.setText("BELLY");
             Belly();
@@ -77,12 +85,12 @@ public class MainActivity3 extends AppCompatActivity {
     public void Belly(){
 
         bellypic=new ArrayList<>();
-        bellypic.add("@drawable/mind_with_muscle_belly_workout");
-        bellypic.add("@drawable/mukti_gautam_belly_workout");
-        bellypic.add("@drawable/madfit_belly_workout");
-        bellypic.add("@drawable/cultfit_belly_workout");
-        bellypic.add("@drawable/thebodyproject_belly_workout");
-        bellypic.add("@drawable/healthifyme_belly_workout");
+        bellypic.add("mind_with_muscle_belly_workout");
+        bellypic.add("mukti_gautam_belly_workout");
+        bellypic.add("madfit_belly_workout");
+        bellypic.add("cultfit_belly_workout");
+        bellypic.add("thebodyproject_belly_workout");
+        bellypic.add("healthifyme_belly_workout");
 
         bellyvideo=new ArrayList<>();
         bellyvideo.add("https://www.youtube.com/embed/IyRPOjlKGEw?si=-1zihkTLcE-AsTHz");
@@ -116,12 +124,12 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void fullBody(){
         fullbodypic=new ArrayList<>();
-        fullbodypic.add("@drawable/mind_with_muscle_fat_loss_workout");
-        fullbodypic.add("@drawable/mukti_gautam_fat_loss_workout");
-        fullbodypic.add("@drawable/madfit_full_body_workout");
-        fullbodypic.add("@drawable/cultfit_full_body_workout");
-        fullbodypic.add("@drawable/thebodyproject_fullbody_workout");
-        fullbodypic.add("@drawable/healthifyme_fullbody_workout");
+        fullbodypic.add("mind_with_muscle_fat_loss_workout");
+        fullbodypic.add("mukti_gautam_fat_loss_workout");
+        fullbodypic.add("madfit_full_body_workout");
+        fullbodypic.add("cultfit_full_body_workout");
+        fullbodypic.add("thebodyproject_fullbody_workout");
+        fullbodypic.add("healthifyme_fullbody_workout");
 
         fullbodyvideo=new ArrayList<>();
         fullbodyvideo.add("https://www.youtube.com/embed/HKYBegMGhQA?si=aKj71mo_5JZBDyyU");
@@ -155,13 +163,13 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void muscle(){
         musclepic=new ArrayList<>();
-        musclepic.add("@drawable/mind_with_muscle_muscle_workout");
-        musclepic.add("@drawable/mukti_gautam_muscle_workout");
-        musclepic.add("@drawable/mukti_gautam_arm_workout");
-        musclepic.add("@drawable/madfit_muscle_workout");
-        musclepic.add("@drawable/cultfit_muscle_workout");
-        musclepic.add("@drawable/thebodyproject_muscle_workout");
-        musclepic.add("@drawable/healthyfime_muscles_workout");
+        musclepic.add("mind_with_muscle_muscle_workout");
+        musclepic.add("mukti_gautam_muscle_workout");
+        musclepic.add("mukti_gautam_arm_workout");
+        musclepic.add("madfit_muscle_workout");
+        musclepic.add("cultfit_muscle_workout");
+        musclepic.add("thebodyproject_muscle_workout");
+        musclepic.add("healthyfime_muscles_workout");
 
         musclevideo=new ArrayList<>();
         musclevideo.add("https://www.youtube.com/embed/_yo1kHbCB0Q?si=cvdqx0fYyzeWFRUD");
@@ -198,12 +206,12 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void leg(){
         legpic=new ArrayList<>();
-        legpic.add("@drawable/mind_with_muscle_leg_workout");
-        legpic.add("@drawable/mukti_gautam_lower_body_workout");
-        legpic.add("@drawable/madfit_leg_workout");
-        legpic.add("@drawable/cultfit_legs_workout");
-        legpic.add("@drawable/thebodyproject_leg_workout");
-        legpic.add("@drawable/healthifyme_leg_workout");
+        legpic.add("mind_with_muscle_leg_workout");
+        legpic.add("mukti_gautam_lower_body_workout");
+        legpic.add("madfit_leg_workout");
+        legpic.add("cultfit_legs_workout");
+        legpic.add("thebodyproject_leg_workout");
+        legpic.add("healthifyme_leg_workout");
 
         legvideo=new ArrayList<>();
         legvideo.add("https://www.youtube.com/embed/HMu6O4bfsqw?si=SQgirzjDHxM4mIAc");
@@ -238,11 +246,11 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void chest(){
         chestpic=new ArrayList<>();
-        chestpic.add("@drawable/mind_with_muscle_chest_workout");
-        chestpic.add("@drawable/madfit_chest_workout");
-        chestpic.add("@drawable/cultfit_chest_workout");
-        chestpic.add("@drawable/thebodyproject_chest_workout");
-        chestpic.add("@drawable/healthyfime_chest_workout");
+        chestpic.add("mind_with_muscle_chest_workout");
+        chestpic.add("madfit_chest_workout");
+        chestpic.add("cultfit_chest_workout");
+        chestpic.add("thebodyproject_chest_workout");
+        chestpic.add("healthyfime_chest_workout");
 
 
         chestvideo=new ArrayList<>();

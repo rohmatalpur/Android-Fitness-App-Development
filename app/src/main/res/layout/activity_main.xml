@@ -5,28 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradienttrain"
+    android:background="@android:color/white"
     tools:context=".MainActivity">
+
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/animation_view"
-        app:lottie_rawRes="@raw/logo"
+        android:layout_centerInParent="true"
+        app:lottie_rawRes="@raw/run_dog_run"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"/>
-        <TextView
-            android:id="@+id/app_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:layout_marginTop="480dp"
-            android:layout_marginStart="180dp"
-            android:text="Workout App">
-
-        </TextView>
-
-
-
 
 </RelativeLayout>

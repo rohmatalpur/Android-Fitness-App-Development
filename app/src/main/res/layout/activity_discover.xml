@@ -1,128 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradienttrain"
-    android:orientation="vertical"
+    android:background="?attr/colorSurface"
     tools:context=".Discover">
 
-    <!-- First Row -->
+    <!-- Purple Header Section -->
     <RelativeLayout
+        android:id="@+id/headerSection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="200dp"
+        android:background="?attr/colorPrimary"
+        android:paddingTop="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
 
-        <!-- First ImageView and TextView -->
         <ImageView
-            android:id="@+id/muscle"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="140dp"
-            android:src="@drawable/muscle"/>
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="@color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MUSCLES"
-            android:textColor="@color/black"
+            android:text="Discover Workouts"
+            android:textColor="@color/white"
+            android:textSize="32sp"
             android:textStyle="bold"
-            android:layout_below="@+id/muscle"
-            android:layout_marginStart="80dp"
-            android:textSize="15sp"/>
+            android:layout_marginTop="60dp"/>
 
-        <!-- Second ImageView and TextView -->
-        <ImageView
-            android:id="@+id/fullbody"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="200dp"
-            android:src="@drawable/fullbody"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FULLBODY"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_below="@+id/fullbody"
-            android:layout_marginStart="270dp"
-            android:textSize="15sp"
-            android:layout_gravity="center"/>
     </RelativeLayout>
 
-    <!-- Second Row -->
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">
 
-        <!-- First ImageView and TextView in the second row -->
-        <ImageView
-            android:id="@+id/Legs"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="140dp"
-            android:src="@drawable/legs"/>
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LEGS"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_below="@+id/Legs"
-            android:layout_marginStart="80dp"
-            android:textSize="15sp" />
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="32dp">
 
-        <!-- Second ImageView and TextView in the second row -->
-        <ImageView
-            android:id="@+id/belly"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="200dp"
-            android:src="@drawable/belly" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BELLY"
-            android:textColor="@color/black"
-            android:textStyle="normal"
-            android:layout_below="@+id/belly"
-            android:layout_marginStart="270dp"
-            android:textSize="15sp"/>
-    </RelativeLayout>
+            <!-- Search Bar -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/searchCard"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="?attr/colorSurface">
 
-    <!-- Third Row -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
 
-        <!-- Centered ImageView and TextView in the third row -->
-        <ImageView
-            android:id="@+id/chest"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/chest"
-            android:layout_gravity="center" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CHEST"
-            android:textColor="@color/black"
-            android:layout_below="@+id/chest"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:layout_marginStart="90dp"/>
-    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        android:tint="#5F4B8B"/>
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Search workout videos..."
+                        android:textSize="16sp"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"/>
 
-</LinearLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Workout Categories"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Category Grid using GridLayout style -->
+
+            <!-- Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="16dp">
+
+                <!-- Muscle Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/muscle"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    app:rippleColor="#5F4B8B">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/muscle"
+                        android:scaleType="centerCrop">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/black"
+                            android:alpha="0.3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💪 MUSCLES"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_centerInParent="true"
+                            android:padding="12dp"
+                            android:background="#80000000"
+                            android:elevation="4dp"/>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Full Body Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fullbody"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    app:rippleColor="#5F4B8B">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/fullbody"
+                        android:scaleType="centerCrop">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/black"
+                            android:alpha="0.3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🏃 FULL BODY"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_centerInParent="true"
+                            android:padding="12dp"
+                            android:background="#80000000"
+                            android:elevation="4dp"/>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="16dp">
+
+                <!-- Legs Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/Legs"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    app:rippleColor="#5F4B8B">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/legs"
+                        android:scaleType="centerCrop">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/black"
+                            android:alpha="0.3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🦵 LEGS"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_centerInParent="true"
+                            android:padding="12dp"
+                            android:background="#80000000"
+                            android:elevation="4dp"/>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Belly Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/belly"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    app:rippleColor="#5F4B8B">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/belly"
+                        android:scaleType="centerCrop">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/black"
+                            android:alpha="0.3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💥 ABS"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_centerInParent="true"
+                            android:padding="12dp"
+                            android:background="#80000000"
+                            android:elevation="4dp"/>
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Row 3 - Chest (Full Width) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chest"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+                app:rippleColor="@color/purple">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chest"
+                    android:scaleType="centerCrop">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black"
+                        android:alpha="0.3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥 CHEST"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_centerInParent="true"
+                        android:padding="16dp"
+                        android:background="#80000000"
+                        android:elevation="4dp"/>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

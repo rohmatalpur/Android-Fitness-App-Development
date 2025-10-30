@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     TextView app_name;
@@ -21,10 +23,24 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 synchronized (this) {
                     try {
-                        wait(5*1000);
+                        wait(2*1000);
                     } catch (Exception e) {}
                 }
-                startActivity(new Intent(MainActivity.this,MainActivity2.class));
+
+                // Check if user is logged in
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                Intent intent;
+                if (currentUser != null) {
+                    // User is logged in, go to main app
+                    intent = new Intent(MainActivity.this, MainActivity2.class);
+                } else {
+                    // User not logged in, go to login
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
+                }
+                startActivity(intent);
+                finish();
             }
         };
         Thread mythread = new Thread(runnable);

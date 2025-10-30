@@ -13,3 +13,18 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Claude Code
+.claude/
+
+# Documentation files (keep only README.md)
+*.txt
+*.md
+!README.md
+
+# Backup files
+*.backup
+*.bak
+
+# Temporary files
+temp_*
